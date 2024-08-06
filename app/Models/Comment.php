@@ -11,7 +11,7 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'email', 'phone', 'name', 'message'
+        'name', 'message'
     ];
 
     public function article(): BelongsTo

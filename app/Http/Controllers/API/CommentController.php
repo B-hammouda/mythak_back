@@ -21,8 +21,7 @@ class CommentController extends Controller
         ]);
         $comment = new Comment([
             'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
+          
             'message' => $request->input('message'),
         ]);
 
