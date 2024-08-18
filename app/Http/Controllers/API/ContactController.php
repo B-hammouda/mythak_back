@@ -18,10 +18,11 @@ class ContactController extends Controller
 
     function store(Request $request){
         $data = $request->validate([
-            'subject'=> ['required', 'string'],
+            'subject'=> [ 'string'],
             'email'=>['required', 'email'],
             'message'=>['required', 'string'],
-            'name'=>['required', 'string']
+            'name'=>[ 'string'],
+            'phone'=>['string']
         ]);
         return Contact::create($data);
     }
