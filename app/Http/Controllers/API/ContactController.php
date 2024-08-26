@@ -24,6 +24,7 @@ class ContactController extends Controller
             'name'=>[ 'string'],
             'phone'=>['string']
         ]);
+
         return Contact::create($data);
     }
 

@@ -8,7 +8,7 @@ use App\Models\Article;
 use App\Models\Comment;
 
 class CommentController extends Controller
-{
+{   
     function index(Article $article)  {
         $comments = $article->comments;
         return response()->json([
