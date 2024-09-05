@@ -10,6 +10,7 @@ use TCG\Voyager\Traits\Translatable;
 class Comment extends Model
 {
     use HasFactory;
+    use Translatable;
 
     protected $fillable = [
         'name', 'message'

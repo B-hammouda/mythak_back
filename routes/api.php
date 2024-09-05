@@ -6,13 +6,14 @@ use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\ArticleController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\ContactController;
+use App\Http\Controllers\API\CategoryController;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
 Route::post('/login',[UserController::class, 'login'])->name('login');
-
 
 Route::get('/articles',[ArticleController::class,'index'])->name('articles');
 Route::get('/articles/{article}',[ArticleController::class,'show'])->name('showArticle');
@@ -21,6 +22,10 @@ Route::get('/articles/{article}/comments',[CommentController::class,'index']);
 Route::post('/articles/{article}/comments',[CommentController::class,'store']);
 
 Route::post('/contact',[ContactController::class, 'store']);
+
+Route::get('/categories',[CategoryController::class, 'index']);
+Route::get('/categories/{category}/articles',[CategoryController::class, 'categoryArticles']);
+Route::get('/subcategories/{sub_category}/articles',[CategoryController::class, 'subcCPategoryArticles']);
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout',[UserController::class, 'logout'])->name('logout');
@@ -32,6 +37,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::get('/contact',[ContactController::class, 'index']);
     Route::delete('/contact/{contact}',[ContactController::class, 'delete']);
+
+
 
 
 
