@@ -9,7 +9,7 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     function index()  {
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'desc')->get();
         return response()->json([
             'articles'=>$articles
         ],200);

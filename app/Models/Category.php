@@ -12,10 +12,10 @@ class Category extends Model
     use HasFactory;
     use Translatable;
     protected $fillable = [
-       'name_ar','name_en','description_ar','description_en'
+       'name','description'
     ];
     protected $translatable = [
-       'name_ar','name_en','description_ar','description_en'
+       'name','description'
     ];
     public function subCategories(): HasMany
     {

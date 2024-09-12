@@ -15,10 +15,10 @@ class Article extends Model
     use Translatable;
 
     protected $fillable = [
-        'title', 'content'
+        'title', 'content', 'image','file', 'writer', 'category_id','sub_category_id'
     ];
     protected $translatable = [
-        'title', 'content', 'image','file', 'writer'
+        'title', 'content', 'writer'
     ];
 
     public function comments(): HasMany

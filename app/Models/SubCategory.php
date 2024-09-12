@@ -13,10 +13,10 @@ class SubCategory extends Model
     use HasFactory;
     use Translatable;
     protected $fillable = [
-        'name_ar','name_en','description_ar','description_en','category_id'
+        'name','description','category_id'
      ];
      protected $translatable = [
-        'name_ar','name_en','description_ar','description_en','category_id'
+        'name','description'
      ];
      public function category(): BelongsTo
      {
