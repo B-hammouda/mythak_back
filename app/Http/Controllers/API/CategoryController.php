@@ -11,7 +11,7 @@ use App\Models\Article;
 class CategoryController extends Controller
 {
     function index() {
-        $categories = Category::with(['subCategories'])->get();
+        $categories = Category::with(['subCategories','translations','subCategories.translations'])->get();
         return response()->json([
             'categories'=>$categories
         ],200);;
@@ -23,7 +23,7 @@ class CategoryController extends Controller
         ]);
         
     }
-    function subcCPategoryArticles(SubCategory $sub_category) {
+    function subCategoryArticles(SubCategory $sub_category) {
         $articles = Article::where('sub_category_id', $sub_category->id)->get();
         return response()->json([
             "articles"=>$articles

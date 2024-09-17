@@ -25,7 +25,7 @@ Route::post('/contact',[ContactController::class, 'store']);
 
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('/categories/{category}/articles',[CategoryController::class, 'categoryArticles']);
-Route::get('/subcategories/{sub_category}/articles',[CategoryController::class, 'subcCPategoryArticles']);
+Route::get('/subcategories/{sub_category}/articles',[CategoryController::class, 'subCategoryArticles']);
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout',[UserController::class, 'logout'])->name('logout');
