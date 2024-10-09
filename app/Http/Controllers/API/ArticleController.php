@@ -24,6 +24,7 @@ class ArticleController extends Controller
     }
     
     function show(Article $article){
+        $article->load("translations");
         return response()->json([
             'article'=>$article
         ]);
